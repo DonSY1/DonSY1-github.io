@@ -162,7 +162,7 @@ export const siteConfig: SiteConfig = {
 			enable: true, // 在主页显示自定义文本
 			title: "星秋の小破站", // 主页横幅主标题
 
-			subtitle: ["欢迎来到我的个人博客", "11111"],
+			subtitle: ["欢迎来到我的个人博客", "今天过的怎么样？"],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
 
