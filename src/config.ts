@@ -365,11 +365,11 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa7-brands:bilibili",
 			url: "https://space.bilibili.com/509316573",
 		},
-		// {
-		// 	name: "Gitee",
-		// 	icon: "mdi:git",
-		// 	url: "https://gitee.com/matsuzakayuki",
-		// },
+		{
+			name: "Gitee",
+			icon: "mdi:git",
+			url: "https://gitee.com/DonSY1",
+		},
 		{
 			name: "GitHub",
 			icon: "fa7-brands:github",
