@@ -273,12 +273,12 @@ export const navBarConfig: NavBarConfig = {
 					external: true,
 					icon: "fa7-brands:bilibili",
 				},
-				// {
-				// 	name: "Gitee",
-				// 	url: "https://gitee.com/matsuzakayuki/Mizuki",
-				// 	external: true,
-				// 	icon: "mdi:git",
-				// },
+				{
+					name: "Gitee",
+					url: "https://gitee.com/DonSY1",
+					external: true,
+					icon: "mdi:git",
+				},
 			],
 		},
 		{
