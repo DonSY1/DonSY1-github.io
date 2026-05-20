@@ -1,10 +1,8 @@
 ---
 title: Zigbee1
 published: 2026-05-20
-description: Zigbee基础实验.
 tags: [Markdown, Zigbee]
 category: Zigbee
-date: 2025-01-20
 ---
 
 # **实验一**
