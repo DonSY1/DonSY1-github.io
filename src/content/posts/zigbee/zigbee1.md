@@ -1,18 +1,10 @@
 ---
 title: Zigbee1
 published: 2026-05-20
-pinned: true
 description: Zigbee基础实验.
 tags: [Markdown, Zigbee]
-category: Examples
-licenseName: "Unlicensed"
-author: emn178
-sourceLink: "https://github.com"
-draft: false
+category: Zigbee
 date: 2025-01-20
-image: "./cover.png"
-pubDate: 2026-05-20
-permalink: "encrypted-example"
 ---
 
 # **实验一**
