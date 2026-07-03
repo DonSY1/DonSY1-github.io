@@ -1,3 +1,12 @@
+---
+title: Claude部署
+published: 2026-06-20
+tags: [Markdown, Claude]
+category: Claude
+---
+
+
+
 # Claude部署教程（Windows）
 
 ## 一、node.js安装
