@@ -8,7 +8,7 @@
 
 点击安装程序
 
-![nodejs安装程序.msi下载](images\nodejs下载.png)
+![nodejs安装程序.msi下载](nodejs下载.png)
 
 下载后打开安装程序，一直点Next即可
 
@@ -20,7 +20,7 @@
 
 点击Click here to download
 
-![git下载](images\git下载.png)
+![git下载](git下载.png)
 
 如遇下载问题，可通过访问以下羽翼城大佬的作品解决
 
@@ -59,7 +59,7 @@ ctrl+S保存
 
 拉到最底部，选择Windows.msi文件下载
 
-![CCSwitch下载](images\ccswitch下载.png)
+![CCSwitch下载](ccswitch下载.png)
 
 下载后打开安装程序，一直点Next即可
 
