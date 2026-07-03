@@ -37,7 +37,6 @@ category: Claude
 
 下载后打开安装程序，一直点Next即可
 
-
 ## 三、安装Claude code
 
 win+R打开命令提示符
