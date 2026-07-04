@@ -53,11 +53,11 @@ export const siteConfig: SiteConfig = {
 		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
 		mode: "logo",
 		// 顶栏标题文本
-		text: "MizukiUI",
+		text: "DonSY1",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
-		icon: "public/assets/home/home.png",
+		icon: "assets/home/home.png",
 		// 网站Logo图片路径
-		logo: "public/assets/home/default-logo.png",
+		logo: "assets/home/default-logo.png",
 	},
 
 	// 页面自动缩放配置
@@ -119,17 +119,17 @@ export const siteConfig: SiteConfig = {
 		// 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
 		src: {
 			desktop: [
-				"public/assets/desktop-banner/1.webp",
-				"public/assets/desktop-banner/2.webp",
-				"public/assets/desktop-banner/3.webp",
-				"public/assets/desktop-banner/4.webp",
-				"public/assets/desktop-banner/5.webp",
-				"public/assets/desktop-banner/6.webp",
+				"/assets/desktop-banner/1.webp",
+				"/assets/desktop-banner/2.webp",
+				"/assets/desktop-banner/3.webp",
+				"/assets/desktop-banner/4.webp",
+				"/assets/desktop-banner/5.webp",
+				"/assets/desktop-banner/6.webp",
 			], // 桌面横幅图片
 			mobile: [
-				"public/assets/mobile-banner/1.webp",
-				"public/assets/mobile-banner/2.webp",
-				"public/assets/mobile-banner/3.webp",
+				"/assets/mobile-banner/1.webp",
+				"/assets/mobile-banner/2.webp",
+				"/assets/mobile-banner/3.webp",
 				"/assets/mobile-banner/4.webp",
 				"/assets/mobile-banner/5.webp",
 				"/assets/mobile-banner/6.webp",
