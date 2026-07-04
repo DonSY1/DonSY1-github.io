@@ -47,7 +47,7 @@ win+R打开命令提示符
 
 ``claude --version``
 
-输入`claude`进入Claude即可进入Claude
+输入`claude`然后回车进入即可进入Claude
 
 ## 四、跳过登录验证
 
