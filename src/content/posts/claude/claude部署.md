@@ -7,7 +7,7 @@ category: Claude
 
 
 
-# Claude部署教程（Windows）
+# __Claude部署教程（Windows）__
 
 ## 一、node.js安装
 
@@ -79,7 +79,7 @@ ctrl+S保存
 
 之后点击API Key，点击创建API Key，输入API Key的名称，例如：claude，点击复制按钮复制API Key
 
-_注意：不要将API Key透露给任何人，可能会造成财产损失_
+_注意：不要将API Key透露给任何人，可能会造成财产损失_!
 
 之后打开ccswitch，选择Claude，点击添加供应商或者右上角加号，选择DeepSeek，往下拉将API Key填进去，点击添加（如果需要1M可以在模型映射窗口将后面的1M选中，建议打开）即可搞定
 
