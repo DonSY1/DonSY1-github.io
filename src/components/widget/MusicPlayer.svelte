@@ -93,6 +93,14 @@ const localPlaylist = [
 		url: "assets/music/url/天生鬼才.mp3",
 		duration: 91,
 	},
+    {
+		id: 3,
+		title: "NIGHT DANCER",
+		artist: "imase",
+		cover: "assets/music/cover/NIGHT_DANCER.jpg",
+		url: "assets/music/url/NIGHT_DANCER.mp3",
+		duration: 210,
+	},
     
 ];
 
