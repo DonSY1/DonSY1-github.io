@@ -101,6 +101,14 @@ const localPlaylist = [
 		url: "assets/music/url/cl.mp3",
 		duration: 200,
 	},
+    {
+		id: 4,
+		title: "反乌托邦",
+		artist: "Ciyo",
+		cover: "assets/music/cover/反乌托邦.jpg",
+		url: "assets/music/url/反乌托邦.mp3",
+		duration: 113,
+	},
 ];
 
 // 从localStorage加载音量设置
