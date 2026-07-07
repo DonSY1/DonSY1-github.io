@@ -101,6 +101,22 @@ const localPlaylist = [
 		url: "assets/music/url/NIGHT_DANCER.mp3",
 		duration: 210,
 	},
+    {
+		id: 4,
+		title: "Perfect Version Of Me",
+		artist: "Vicky宣宣",
+		cover: "assets/music/cover/Perfect Version Of Me.jpg",
+		url: "assets/music/url/Perfect Version Of Me.mp3",
+		duration: 287,
+	},
+    {
+		id: 5,
+		title: "Thank you for dears",
+		artist: "みぃ",
+		cover: "assets/music/cover/Thank you for dears.jpg",
+		url: "assets/music/url/Thank you for dears.mp3",
+		duration: 326,
+	},
     
 ];
 
