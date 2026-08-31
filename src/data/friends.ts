@@ -12,14 +12,14 @@ export interface FriendItem {
 
 // 友情链接数据
 export const friendsData: FriendItem[] = [
-	// {
-	// 	id: 1,
-	// 	title: "Astro",
-	// 	imgurl: "https://avatars.githubusercontent.com/u/44914786?v=4&s=640",
-	// 	desc: "The web framework for content-driven websites",
-	// 	siteurl: "https://github.com/withastro/astro",
-	// 	tags: ["Framework"],
-	// },
+	{
+		id: 1,
+		title: "午安",
+		imgurl: "https://blog.711250.xyz/_astro/wuan.CBihK-Dp_Z2gIanU.webp",
+		desc: "喜欢睡午觉",
+		siteurl: "https://blog.711250.xyz/",
+		tags: ["Friend", "Blog"],
+	},
 	// {
 	// 	id: 2,
 	// 	title: "Mizuki Docs",
