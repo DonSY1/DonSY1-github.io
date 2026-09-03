@@ -7,7 +7,7 @@ export interface GameItem {
 	tags: string[];
 }
 
-export const friendsData: FriendItem[] = [
+export const friendsData: GameItem[] = [
 	{
 		id: 1,
 		title: "猜数字",
