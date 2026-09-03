@@ -12,7 +12,7 @@ export const friendsData: GameItem[] = [
 		id: 1,
 		title: "猜数字",
 		imgurl: "https://blog.711250.xyz/_astro/wuan.CBihK-Dp_Z2gIanU.webp",
-		desc: "喜欢睡午觉",
+		desc: "123132",
 		siteurl: "https://blog.yindiot.xyz/src/game/game.html",
 		tags: ["Game"],
 	},
