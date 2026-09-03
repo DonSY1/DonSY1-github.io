@@ -331,6 +331,11 @@ export const navBarConfig: NavBarConfig = {
 			url: "#",
 			icon: "material-symbols:more-horiz",
 			children: [
+				{
+					name: "game",
+					url: "/game/",
+					icon: "material-symbols:gamepad",
+				},
 				// {
 				// 	name: "Projects",
 				// 	url: "/projects/",
