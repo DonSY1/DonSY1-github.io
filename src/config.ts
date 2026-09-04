@@ -332,7 +332,7 @@ export const navBarConfig: NavBarConfig = {
 			icon: "material-symbols:more-horiz",
 			children: [
 				{
-					name: "game",
+					name: "Game",
 					url: "/game/",
 					icon: "material-symbols:gamepad",
 				},
