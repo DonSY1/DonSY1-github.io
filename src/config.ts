@@ -46,6 +46,7 @@ export const siteConfig: SiteConfig = {
 		timeline: true, // 时间线页面开关
 		albums: false, // 相册页面开关
 		devices: false, // 设备页面开关
+		game: true, // 游戏页面开关
 	},
 
 	// 顶栏标题配置

@@ -1,0 +1,134 @@
+---
+import { siteConfig } from "../config";
+import { getGamesList } from "../data/game";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+
+// 检查游戏页面是否启用
+if (!siteConfig.featurePages.game) {
+	return Astro.redirect("/404/");
+}
+
+const gamesList = getGamesList();
+---
+
+<MainGridLayout title={i18n(I18nKey.game)} description={i18n(I18nKey.game)}>
+	<script>
+		import('../scripts/right-sidebar-layout.js');
+	</script>
+	<div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<!-- 页面标题 -->
+			<div class="flex flex-col items-start justify-center mb-8">
+				<h1 class="text-4xl font-bold text-90 mb-2 relative
+						  before:w-1 before:h-8 before:rounded-md before:bg-(--primary)
+						  before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-4">
+					{i18n(I18nKey.game)}
+				</h1>
+				<p class="text-lg text-60">
+					{i18n(I18nKey.gameSubtitle)}
+				</p>
+			</div>
+
+			<!-- 游戏卡片网格 -->
+			<div id="games-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mb-6">
+				{gamesList.map((item) => (
+					<div
+						class="game-card group relative bg-transparent rounded-xl border border-(--line-divider)
+									overflow-hidden transition-all duration-300
+									hover:shadow-xl hover:-translate-y-1"
+					>
+						<div class="p-6">
+							<!-- 封面和标题区 -->
+							<div class="flex items-start gap-4 mb-4">
+								<div class="w-16 h-16 shrink-0 rounded-xl overflow-hidden
+												bg-(--btn-regular-bg)
+												ring-2 ring-transparent
+												transition-all duration-300">
+									<img
+										src={item.imgurl}
+										alt={item.title}
+										class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+										loading="lazy"
+									/>
+								</div>
+
+								<div class="flex-1 min-w-0">
+									<h3 class="text-xl font-bold text-90 mb-1 truncate
+												 group-hover:text-(--primary) transition-colors duration-200">
+										{item.title}
+									</h3>
+								</div>
+							</div>
+
+							<!-- 描述 -->
+							<p class="text-sm text-60 mb-4 line-clamp-2 min-h-10">
+								{item.desc}
+							</p>
+
+							<!-- 标签 -->
+							<div class="flex flex-wrap gap-2 mb-4">
+								{item.tags.map(tag => (
+									<span class="px-2 py-1 text-xs rounded-md
+												 bg-(--primary)/10 text-(--primary)
+												 font-medium">
+										{tag}
+									</span>
+								))}
+							</div>
+
+							<!-- 开始游戏按钮 -->
+							<a
+								href={item.siteurl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex-1 flex items-center justify-center gap-2 px-4 py-2
+										 rounded-lg bg-(--primary) text-white
+										 hover:bg-(--primary)/90
+										 active:scale-95 transition-all duration-200
+										 font-medium text-sm"
+							>
+								<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M8 5.14v13.72a1 1 0 001.5.86l11-6.86a1 1 0 000-1.72l-11-6.86a1 1 0 00-1.5.86z" />
+								</svg>
+								{i18n(I18nKey.gamePlay)}
+							</a>
+						</div>
+
+						<!-- 悬停装饰效果 -->
+						<div class="absolute inset-0 bg-linear-to-br from-(--primary)/5 to-transparent
+										opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</MainGridLayout>
+
+<style>
+	/* 游戏卡片动画 */
+	.game-card {
+		animation: fadeInUp 0.5s ease-out forwards;
+		opacity: 0;
+	}
+
+	.game-card:nth-child(1) { animation-delay: 0.05s; }
+	.game-card:nth-child(2) { animation-delay: 0.1s; }
+	.game-card:nth-child(3) { animation-delay: 0.15s; }
+	.game-card:nth-child(4) { animation-delay: 0.2s; }
+	.game-card:nth-child(5) { animation-delay: 0.25s; }
+	.game-card:nth-child(6) { animation-delay: 0.3s; }
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

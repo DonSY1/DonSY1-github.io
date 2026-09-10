@@ -55,6 +55,9 @@ enum I18nKey {
 	friendsCopyLink = "friendsCopyLink",
 	friendsCopySuccess = "friendsCopySuccess",
 	friendsTags = "friendsTags",
+	game = "game",
+	gameSubtitle = "gameSubtitle",
+	gamePlay = "gamePlay",
 	anime = "anime",
 	diary = "diary",
 
