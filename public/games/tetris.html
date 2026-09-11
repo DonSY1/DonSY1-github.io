@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>俄罗斯方块</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+        body{padding:30px;background:#1a1a1a;color:#fff;text-align:center}
+        canvas{background:#000;border:2px solid #666}
+    </style>
+</head>
+<body>
+    <h3>俄罗斯方块｜← →移动，↓下落，↑旋转</h3>
+    <canvas id="tetrisCanvas" width="300" height="600"></canvas>
+    <p>分数：<span id="tetrisScore">0</span></p>
+<script>
+const tetrisCanvas = document.getElementById('tetrisCanvas')
+const tCtx = tetrisCanvas.getContext('2d')
+let tetrisScore, board, piece, piecePos, tetrisTimer
+const tSize =30
+const TW = 10, TH=20
+const shapes = [
+    [[1,1,1,1]],
+    [[1,1],[1,1]],
+    [[0,1,0],[1,1,1]],
+    [[1,0,0],[1,1,1]],
+    [[0,0,1],[1,1,1]],
+    [[1,1,0],[0,1,1]],
+    [[0,1,1],[1,1,0]]
+]
+function initTetris(){
+    clearInterval(tetrisTimer)
+    tetrisScore=0
+    document.getElementById('tetrisScore').textContent=tetrisScore
+    board = Array.from({length:TH},()=>Array(TW).fill(0))
+    newPiece()
+    tetrisTimer = setInterval(tetrisDrop, 600)
+}
+function newPiece(){
+    const idx = Math.floor(Math.random()*shapes.length)
+    piece = shapes[idx]
+    piecePos = {x:Math.floor(TW/2-piece[0].length/2),y:0}
+}
+function drawTetris(){
+    tCtx.fillStyle='#000'
+    tCtx.fillRect(0,0,tetrisCanvas.width,tetrisCanvas.height)
+    for(let y=0;y<TH;y++){
+        for(let x=0;x<TW;x++){
+            if(board[y][x]){
+                tCtx.fillStyle='#38bdf8'
+                tCtx.fillRect(x*tSize,y*tSize,tSize-1,tSize-1)
+            }
+        }
+    }
+    tCtx.fillStyle='#fb923c'
+    piece.forEach((row,py)=>row.forEach((v,px)=>{
+        if(v) tCtx.fillRect((piecePos.x+px)*tSize,(piecePos.y+py)*tSize,tSize-1,tSize-1)
+    }))
+}
+function collide(x,y,p){
+    for(let py=0;py<p.length;py++){
+        for(let px=0;px<p[py].length;px++){
+            if(p[py][px]){
+                const nx=x+px, ny=y+py
+                if(nx<0||nx>=TW||ny>=TH||(ny>=0&&board[ny][nx])) return true
+            }
+        }
+    }
+    return false
+}
+function tetrisDrop(){
+    if(!collide(piecePos.x,piecePos.y+1,piece)){
+        piecePos.y++
+    }else{
+        piece.forEach((row,py)=>row.forEach((v,px)=>{
+            if(v) board[piecePos.y+py][piecePos.x+px]=1
+        }))
+        for(let y=TH-1;y>=0;y--){
+            if(board[y].every(c=>c)){
+                board.splice(y,1)
+                board.unshift(Array(TW).fill(0))
+                tetrisScore+=100
+                document.getElementById('tetrisScore').textContent=tetrisScore
+                y++
+            }
+        }
+        newPiece()
+        if(collide(piecePos.x,piecePos.y,piece)){
+            clearInterval(tetrisTimer)
+            alert('游戏结束！分数：'+tetrisScore)
+        }
+    }
+    drawTetris()
+}
+function rotate(p){
+    const r = p[0].map((_,i)=>p.map(row=>row[i]).reverse())
+    return r
+}
+document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowLeft'&&!collide(piecePos.x-1,piecePos.y,piece)) piecePos.x--
+    if(e.key==='ArrowRight'&&!collide(piecePos.x+1,piecePos.y,piece)) piecePos.x++
+    if(e.key==='ArrowDown') tetrisDrop()
+    if(e.key==='ArrowUp'){
+        const r = rotate(piece)
+        if(!collide(piecePos.x,piecePos.y,r)) piece=r
+    }
+    drawTetris()
+})
+initTetris()
+</script>
+</body>
+</html>

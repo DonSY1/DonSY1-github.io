@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>贪吃蛇</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+        body{padding:30px;background:#1a1a1a;color:#fff;text-align:center}
+        canvas{background:#000;border:2px solid #666}
+    </style>
+</head>
+<body>
+    <h3>贪吃蛇｜方向键控制移动</h3>
+    <canvas id="snakeCanvas" width="400" height="400"></canvas>
+    <p>分数：<span id="snakeScore">0</span></p>
+<script>
+const snakeCanvas = document.getElementById('snakeCanvas')
+const sCtx = snakeCanvas.getContext('2d')
+let snake, food, dir, nextDir, snakeScore, snakeTimer
+const size = 20
+const count = snakeCanvas.width / size
+
+function initSnake(){
+    clearInterval(snakeTimer)
+    snake = [{x:10,y:10}]
+    food = randPos()
+    dir = {x:1,y:0}
+    nextDir = {x:1,y:0}
+    snakeScore = 0
+    document.getElementById('snakeScore').textContent = snakeScore
+    snakeTimer = setInterval(snakeLoop,120)
+}
+function randPos(){
+    return {x:Math.floor(Math.random()*count),y:Math.floor(Math.random()*count)}
+}
+function snakeLoop(){
+    dir = {...nextDir}
+    const head = {x:snake[0].x+dir.x,y:snake[0].y+dir.y}
+    if(head.x<0||head.y<0||head.x>=count||head.y>=count||snake.some(p=>p.x===head.x&&p.y===head.y)){
+        clearInterval(snakeTimer)
+        alert('游戏结束！分数：'+snakeScore)
+        return
+    }
+    snake.unshift(head)
+    if(head.x===food.x&&head.y===food.y){
+        snakeScore+=10
+        document.getElementById('snakeScore').textContent = snakeScore
+        food = randPos()
+    }else{
+        snake.pop()
+    }
+    drawSnake()
+}
+function drawSnake(){
+    sCtx.fillStyle='#000'
+    sCtx.fillRect(0,0,snakeCanvas.width,snakeCanvas.height)
+    sCtx.fillStyle='#4ade80'
+    snake.forEach(p=>sCtx.fillRect(p.x*size,p.y*size,size-1,size-1))
+    sCtx.fillStyle='#f87171'
+    sCtx.fillRect(food.x*size,food.y*size,size-1,size-1)
+}
+document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowUp'&&dir.y!==1) nextDir={x:0,y:-1}
+    if(e.key==='ArrowDown'&&dir.y!==-1) nextDir={x:0,y:1}
+    if(e.key==='ArrowLeft'&&dir.x!==1) nextDir={x:-1,y:0}
+    if(e.key==='ArrowRight'&&dir.x!==-1) nextDir={x:1,y:0}
+})
+initSnake()
+</script>
+</body>
+</html>
