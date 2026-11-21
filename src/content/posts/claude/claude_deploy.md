@@ -1,7 +1,7 @@
 ---
 title: Claude部署
 published: 2026-06-20
-tags: [Markdown, Claude]
+tags: [Markdown, Claude, 技术分享]
 category: Claude
 ---
 
