@@ -342,11 +342,11 @@ export const navBarConfig: NavBarConfig = {
 				// 	url: "/projects/",
 				// 	icon: "material-symbols:work",
 				// },
-				// {
-				// 	name: "Skills",
-				// 	url: "/skills/",
-				// 	icon: "material-symbols:psychology",
-				// },
+				{
+					name: "Skills",
+					url: "/skills/",
+					icon: "material-symbols:psychology",
+				},
 				// {
 				// 	name: "Timeline",
 				// 	url: "/timeline/",
